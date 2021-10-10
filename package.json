@@ -1,0 +1,65 @@
+{
+  "name": "p2pjsnetwork",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/p2pjsnetwork.min.js",
+  "homepage": "https://github.com/p2pjs/p2pjsnetwork#readme",
+  "keywords": [
+    "p2pjsnetwork",
+    "p2pnetwork",
+    "webrtc",
+    "p2p",
+    "rtc"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p2pjs/p2pjsnetwork"
+  },
+  "bugs": {
+    "url": "https://github.com/p2pjs/p2pjsnetwork"
+  },
+  "files": [
+    "dist/*.js",
+    "dist/*.map",
+    "lib/",
+    "index.d.ts"
+  ],
+  "author": "Arthur Frederico Neves",
+  "maintainers": [
+    "Arthur Frederico Neves <arthurfred.neves@gmail.com> (https://github.com/SharkSharp)"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "parcel build lib/exports.ts --out-file p2pjsnetwork.min.js",
+    "build-nonminified": "parcel build lib/exports.ts --out-file p2pjsnetwork.js --no-minify",
+    "prepublishOnly": "npm run build",
+    "test": "mocha -r ts-node/register -r jsdom-global/register test/**/*.ts"
+  },
+  "release": {
+    "branch": "master"
+  },
+  "types": "./index.d.ts",
+  "devDependencies": {
+    "@types/chai": "^4.2.15",
+    "@types/lodash": "^4.14.170",
+    "@types/mocha": "^7.0.2",
+    "chai": "^4.3.3",
+    "jsdom": "^16.2.2",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^7.1.2",
+    "mock-socket": "8.0.5",
+    "parcel-bundler": "^1.9.4",
+    "standard": "^14.1.0",
+    "ts-node": "^8.10.1",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "@types/events": "^3.0.0",
+    "base64url": "^3.0.1",
+    "crypto-js": "^4.0.0",
+    "elliptic": "^6.5.4",
+    "events": "^3.3.0",
+    "lodash": "^4.17.21",
+    "webrtc-adapter": "^7.7.1"
+  }
+}
